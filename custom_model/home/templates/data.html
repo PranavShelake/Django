@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+        table {
+            color: brown;
+            border: 2px solid cadetblue;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 2px solid cadetblue;
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+    <title>Student Table</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>Name</th>
+                <th>Mark</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in student %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.mark }}</td>
+                    <td>
+                        <button>
+                            <a href="{% url 'delete_student' i.id %}" style="text-decoration: none; color: inherit;">Delete</a>
+                            
+                        </button>
+                        <button>
+                            view
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
