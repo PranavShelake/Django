@@ -21,7 +21,7 @@ def login_page(request):
             auth_login(request, user)
             return redirect('success')
         else:
-            messages.error(request, 'Invalid email or password.')
+            messages.error(request, 'Invalid Email or Password.')
             return redirect('login_page')
     else:
         return render(request, 'login.html')
@@ -79,12 +79,12 @@ def reset_password(request, id):
                 user.set_password(password)
                 user.save()
                 messages.success(request, 'Password reset successfully.')
-                return redirect('success')  # Replace 'success' with your actual success URL name
+                return redirect('login_page')  # Replace 'success' with your actual success URL name
             except User.DoesNotExist:
                 messages.error(request, 'User does not exist.')
                 return redirect('login_page')  # Redirect to login page or handle as needed
         else:
-            messages.error(request, 'Passwords do not match.')
+            messages.error(request, 'Passwords does not match.')
             return redirect('reset_password', id=id)  # Redirect back to the reset password form with user id
 
     return render(request, 'reset_password.html')
@@ -97,13 +97,13 @@ def verification(request):
 
         if not email or not security_key:
             messages.error(request, 'All fields are required.')
-            return redirect('login_page')
+            return redirect('verification')
         
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
             messages.error(request, 'Invalid email.')
-            return redirect('login_page')
+            return redirect('verification')
         
         try:
             user_account = account.objects.get(user=user)
@@ -112,10 +112,10 @@ def verification(request):
                 return redirect('reset_password', id=user.id)
             else:
                 messages.error(request, 'Invalid security key.')
-                return redirect('login_page')
-        except account.DoesNotExist:
+                return redirect('verification')
+        except account.DoesNotExist:    
             messages.error(request, 'Account does not exist for this user.')
-            return redirect('login_page')
+            return redirect('verification')
 
     return render(request, 'verification.html')
 
