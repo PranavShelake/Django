@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Pranav</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+    <link rel="icon" href="https://raw.githubusercontent.com/PranavShelake/Portfolio_Pranav/main/image/icon.png"
+        type="image/png">
+
+</head>
+
+<body class="night">
+    <header>
+        <div class="nav-bar">
+            <div class="name">Pranav Shelake</div>
+            <div class="pages">
+                <a class="border" href="#home">Home</a>
+                <a href="https://drive.google.com/file/d/1KKAmcvBMXIa3eDvTAAELh_7IZn9vUCGw/view?usp=drive_link"
+                    target="_blank" class=" border">Resume</a>
+                    <a class="border" href="#skill">Skills</a>
+                    <a class="border" href="#project">Project</a>
+                <a class="border" href="#contact">Contact Me</a>
+                <p class="border" onclick="switchmode()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" id="button">
+                        <path
+                            d="M192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192s-86-192-192-192L192 64zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" />
+                    </svg>
+                    Dark mode
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="home" class="hero">
+            <div class="message">
+                <p style="font-size:2rem;">Hello,</p>
+                <p style="font-size:3rem;">I'm Pranav Shelake </p>
+                <span id="typing-animation"></span>
+            </div>
+            <img src="{% static 'image/icon.png' %}" class="profile" alt="profile">
+        </div>
+
+        <div class="about-me container">
+            <h2>About ME</h2>
+            <hr>
+            I am Pranav Shelake, a third-year student at Kolhapur Institute of Technology's College
+            of Engineering, Kolhapur, pursuing Computer Science & Engineering (CSE). I enjoy working on a
+            variety of projects. Adaptable and able to work well under pressure. Personality with strong
+            interpersonal skills.
+        </div>
+
+        <div id="skill" class="skills-and-tool">
+            <div class="skill container">
+                <h2>Skills</h2>
+                <hr>
+                <h3>Language</h3>
+                <div class="skill-box">
+                    <p class="skill-name">C</p>
+                    <p class="skill-name">C++</p>
+                    <p class="skill-name">Python</p>
+                    <p class="skill-name">Git and GitHub</p>
+                </div>
+                <h3>Web Developement</h3>
+                <div class="skill-box">
+                    <p class="skill-name">HTML</p>
+                    <p class="skill-name">CSS</p>
+                    <p class="skill-name">Javascript</p>
+                    <p class="skill-name">Django</p>
+                </div>
+                <h3>Database Language</h3>
+                <div class="skill-box">
+                    <p class="skill-name">SQl</p>
+                </div>
+                <h3>APP Developement</h3>
+                <div class="skill-box">
+                    <p class="skill-name">Dart</p>
+                </div>
+            </div>
+            <div class="tool container">
+                <h2>Tools</h2>
+                <hr>
+                <p>GitHub</p>
+                <p>Tableau</p>
+                <p>Android Studio</p>
+                <p >AutoCAD</p>
+            </div>
+        </div>
+
+        <div id="project" class="project container">
+            <h2>Project</h2>
+            <hr>
+            <div class="project-field" onclick="toggleDropdown('web', this)">
+                Web Development
+                <svg id="web-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+                <div class="project-field-dropdown" id="web" style="display: none;">
+                    <div class="box" onclick="toggleDropdown('amazone', this)">
+                        Amazone clone
+                        <svg id="amazone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                            <path d=" M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32
+                            32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3
+                            32-32s-14.3-32-32-32l-144 0 0-144z" />
+                        </svg>
+                        <div class="project-field-dropdown" id="amazone" style="display: none;">
+                            <p>Zero-cross game info...</p>
+                        </div>
+                    </div>
+                    <div class="box" onclick="toggleDropdown('ttt', this)">
+                        Tic Tac Toe
+                        <svg id="ttt-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                            <path d=" M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32
+                            32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3
+                            32-32s-14.3-32-32-32l-144 0 0-144z" />
+                        </svg>
+                        <div class="project-field-dropdown" id="ttt" style="display: none;">
+                            <p>Tic Tac Toe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-field" onclick="toggleDropdown('ml', this)">
+                Machine Learning
+                <svg id="ml-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                    <path d=" M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8
+                    0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160
+                    160z" />
+                </svg>
+                <div class="project-field-dropdown" id="ml" style="display: none;">
+                    <div class="box" onclick="toggleDropdown('moodtune', this)">
+                        Moodtune
+                        <svg id="moodtune-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                            <path d=" M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32
+                            32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3
+                            32-32s-14.3-32-32-32l-144 0 0-144z" />
+                        </svg>
+                        <div class="project-field-dropdown" id="moodtune" style="display: none;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, error quia ducimus
+                                corporis deleniti eligendi atque placeat odio! Fuga saepe inventore sapiente quibusdam
+                                consectetur voluptas numquam, expedita dolore. Maxime, nihil! Eligendi accusantium alias
+                                sunt doloremque possimus odit dolorum modi explicabo deserunt rem aliquam, quia eius
+                                magnam iusto! Aperiam similique assumenda perspiciatis provident deleniti, aliquid enim,
+                                iusto ullam quisquam consequatur eveniet.0</p>
+                        </div>
+                    </div>
+                    <div class="box" onclick="toggleDropdown('paperchecker', this)">
+                        Automatic paper checker
+                        <svg id="paperchecker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                            <path d=" M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32
+                            32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3
+                            32-32s-14.3-32-32-32l-144 0 0-144z" />
+                        </svg>
+                        <div class="project-field-dropdown" id="paperchecker" style="display: none;">
+                            <p>Checking Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae nostrum,
+                                hic quo ad porro libero nobis quaerat asperiores laudantium saepe aliquam, qui, laborum
+                                voluptate repellat aspernatur voluptatibus delectus dolores vel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-field" onclick="toggleDropdown('c-cpp', this)">
+                C/C++
+                <svg id="c-cpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                    <path d=" M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8
+                    0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160
+                    160z" />
+                </svg>
+                <div class="project-field-dropdown" id="c-cpp" style="display: none;">
+                    <div class="box" onclick="toggleDropdown('TTT', this)">
+                        Tic Tac Toe
+                        <svg id="TTT-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ">
+                            <path d=" M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32
+                            32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3
+                            32-32s-14.3-32-32-32l-144 0 0-144z" />
+                        </svg>
+                        <div class="project-field-dropdown" id="TTT" style="display: none;">
+                            <p>Tic Tac Toe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="certificate container">
+            <h2>CERTIFICATIONS</h2>
+            <hr>
+            <div class="cetificate-box">
+                <h3 style="margin-bottom: 10px;">GOOGLE Android Development VIRTUAL INTERNSHIP</h3>
+                <p>Completed an intensive course covering the latest technologies for Android app development,
+                    showcasing proficiency in building innovative and user-friendly mobile applications.</p>
+            </div>
+            <div class="cetificate-box">
+                <h3 style="margin-bottom: 10px;">GOOGLE AI-ML VIRTUAL INTERNSHIP</h3>
+                <p>Successfully completed an intensive virtual internship in Artificial Intelligence and Machine
+                    Learning by Google. Acquired hands-on experience in developing and deploying AI models,
+                    mastering various machine learning algorithms, and applying these skills to solve complex
+                    problems.</p>
+            </div>
+            <div class="cetificate-box">
+                <h3 style="margin-bottom: 10px;">Cyber security by Palo Alto Networks</h3>
+                <p>Acquired expertise in cybersecurity through a comprehensive program by Palo Alto Networks,
+                    specializing in advanced threat prevention and next-generation firewall solutions.</p>
+            </div>
+        </div>
+
+
+        <div class="education container">
+            <h2>Education</h2>
+            <div class="education-field">
+                <div class="education-box">
+                    <h3>B.Tech (2021-2025)</h3>
+                    <hr style="margin-bottom: 10px;">
+                    <div class="college">
+                        <p>Kolhapur Institute of Technology's College of Engineering</p>
+                        <p>B.Tech in CSE | 7.14 CGPA</p>
+                    </div>
+                </div>
+                <div class="education-box">
+                    <h3>Higher Secondary School(2019-2020) </h3>
+                    <hr style="margin-bottom: 10px;">
+                    <div class="hss">
+                        <p>Kendriya Vidyalaya No.2 Infantry Lines, Jamnagar, Gujarat</p>
+                        <p>PCM + Computer Science | CBSE : 72.6%</p>
+                    </div>
+                </div>
+                <div class="education-box">
+                    <h3>Secondary Schools (2017-2018)</h3>
+                    <hr style="margin-bottom: 10px;">
+                    <div class="scc">
+                        <p>Army Public School, Gopalpur, Odisha</p>
+                        <p>CBSE : 77.3%</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="contact" class="question container">
+            <h2>Have a Question? or Feedback</h2>
+            <hr>
+            <div class="message-box">
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <input type="email" id="gmail" name="gmail" placeholder="Enter your Gmail" required>
+                    <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+                    <br>
+                    <label for="file">Upload a file (PDF, IMAGE) here if need: </label>
+                    <input type="file" id="file" name="file" accept=".pdf,.image">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="x">
+            <h2>Contact Me</h2>
+            <hr>
+            <p style="text-align: center; margin-bottom: 20px;">Below are the details to reach out to me !</p>
+            <div class="contact-box">
+
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style=" fill :rgb(255, 102, 0) ">
+                        <path
+                            d="M16 64C16 28.7 44.7 0 80 0L304 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L80 512c-35.3 0-64-28.7-64-64L16 64zM144 448c0 8.8 7.2 16 16 16l64 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-64 0c-8.8 0-16 7.2-16 16zM304 64L80 64l0 320 224 0 0-320z" />
+                    </svg>
+                    +918249816651
+                </h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style=" fill :rgb(247, 34, 34) ">
+                        <path
+                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg>
+                    pranavshelake99@gmail.com
+                </h3>
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style=" fill :rgb(198, 248, 18)">
+                        <path
+                            d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                    <a href="https://maps.app.goo.gl/9Xi2gXtdMenD6LfJ6" >Warananagar, Kolhapur Maharashtra</a>
+                </h3>
+            </div>
+            <div class="contact-box" style="justify-content: center; align-items: center;">
+
+                <a href="#" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin: 20px;">
+                    <path fill="#E01A4F" d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
+                    </svg>
+                </a>
+
+                <a href="#" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin: 20px;">
+                        <path fill="#1789FC" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                    </svg>
+                </a>
+
+                <a href="#" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="margin: 20px;">
+                        <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

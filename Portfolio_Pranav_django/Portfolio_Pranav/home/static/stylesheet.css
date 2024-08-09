@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+.night {
+    max-width: 1330px;
+    margin: 0 auto;
+    background-color: #01101D;
+    color: #F1FFFA;
+    font-size: 1rem;
+
+    .container {
+        background-color: #0D2232;
+    }
+
+    .nav-bar {
+        background-color: #011627;
+    }
+
+    .border:hover {
+        background-color: #0B7A75;
+    }
+
+    .pages a {
+        color: #F1FFFA;
+    }
+
+    hr {
+        background-color: #DDD1C7;
+    }
+
+    .contact-box a {
+        color: #F1FFFA;
+    }
+    svg{
+        width: 25px;
+        fill: #F1FFFA;
+    }
+}
+
+.day {
+    max-width: 1330px;
+    margin: 0 auto;
+    background-color: white;
+    color: #030303;
+    font-size: 1rem;
+
+    .container {
+        background-color: #e6e6e6;
+        box-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
+    }
+
+    .nav-bar {
+        color: #5dad62;
+        background-color: #ffffff;
+    }
+    .border:hover {
+        background-color: #e6e6e6;
+    }
+    hr {
+        background-color: #3f3f3f;
+    }
+    a {
+        text-decoration: none;
+        color: #5dad62;
+    }
+    .contact-box a {
+        color: #080808;
+    }
+
+    svg{
+        
+        width: 25px;
+        fill: #080808;
+    }
+    .pages svg{
+        fill: #5dad62;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    position: fixed;
+    inset: 5px;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    font-size: 1.5rem;
+}
+
+.pages {
+    font-weight: 600;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pages a,p {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+.pages p{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+}
+.border:hover {
+    transition : all 0.3s ease-in;
+    outline: 3px solid #5dad62;
+    border-radius: 5%;
+    outline-offset: 3px;
+}
+
+
+
+
+.hero {
+    height: 300px;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.message {
+    margin-top: 80px;
+    width: 60%;
+}
+
+#typing-animation {
+    font-size: 3.5rem;
+    margin-left: 12px;
+    color: #5dad62;
+}
+
+.profile {
+    width: 20%;
+    padding: 20px;
+}
+
+
+
+.about-me {
+    padding: 20px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+
+
+
+.skills-and-tool {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.skill {
+    width: 55%;
+}
+
+.tool {
+    align-self: self-start;
+    width: 40%;
+}
+
+.skill h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.skill,
+.tool {
+    padding: 20px;
+}
+
+.skill-box {
+    display: flex;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill p {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.tool p {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.project {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.project-field {
+    position: relative;
+    font-size: 1.5rem;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.project-field svg {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.project-field-dropdown {
+    display: none;
+    padding: 10px;
+    margin: 0px 20px 0px 20px;
+}
+
+.project-field-dropdown svg {
+    position: absolute;
+    cursor: pointer;
+}
+
+.project-field .box svg {
+    right: 40px;
+}
+
+.box {
+    margin-bottom: 20px;
+}
+
+.box p {
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+.certificate {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.cetificate-box {
+    padding: 20px;
+}
+
+
+
+.education {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.education-field {
+    padding-top: 20px;
+    display: flex;
+    text-align: center;
+
+    justify-content: space-evenly;
+}
+
+.education-box {
+    width: 30%;
+    font-size: 1rem;
+}
+
+.education-box p {
+    margin-bottom: 10px;
+}
+
+
+
+.question {
+    margin-bottom: 20px;
+    margin-left: 25%;
+    width: 50%;
+    padding: 20px;
+}
+
+.message-box {
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input,
+textarea {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: #8bfc89;
+    color: F1FFFA;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+    width: 50%;
+}
+
+button:hover {
+    outline: 5px solid #5dad62;
+    outline-offset: 5px;
+    transition : all 0.3s linear;
+    background-color: #33fd30;
+}
+
+
+
+
+.contact {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+.contact-box a {
+    text-decoration: none;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-box h3{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+h2 {
+    color: #5dad62;
+    text-align: center;
+}
+
+hr {
+    padding-bottom: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0D2232;
+}
