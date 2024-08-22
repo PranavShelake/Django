@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/stylesheet.css' %}">
+</head>
+<body>
+    <form method="post" class="container">
+        {% csrf_token %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <p style=" color: #d9dcd6; font-weight: 600; ">{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h2>Verify</h2>
+        <div class="form-group">
+            <input type="password" name="otp" id="password" placeholder="Enter OTP" required>
+            <i class="fas fa-lock" onclick="togglePassword()"></i>
+        </div>
+        <button class="btn2" type="submit">Submit</button>
+        <p>Already have an account? <a href="{% url 'login_page' %}">Login</a></p>
+    </form>
+    <script src="{% static 'account/js/script.js' %}"></script>
+</body>
+</html>

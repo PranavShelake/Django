@@ -2,8 +2,11 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from account.models import account
 from django.contrib import messages
-# Create your views here.
+from .email import sent_mail
+from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import authenticate, logout,login as auth_login
+import random
+# Create your views here.
 
 def login_page(request):
     if request.method == 'POST':
@@ -25,6 +28,40 @@ def login_page(request):
             return redirect('login_page')
     else:
         return render(request, 'login.html')
+
+ 
+def verify_email(request):
+    if request.method == 'POST':
+        otp = request.POST.get('otp')
+        gen_otp = request.session.get('gen_otp')  # Retrieve OTP from session
+        
+        if otp == str(gen_otp):
+            # Retrieve user data from the session
+            first_name = request.session.get('first_name')
+            email = request.session.get('email')
+            hashed_password = request.session.get('hashed_password')
+            security_key = request.session.get('security_key')
+            
+            # Clear the session data to avoid keeping sensitive info
+            request.session.flush()
+
+            # Create and save the user with the hashed password
+            user = User.objects.create_user(username=email, email=email, first_name=first_name)
+            user.password = hashed_password
+            user.save()
+
+            # Create the associated account
+            account.objects.create(user=user, security_key=security_key)
+
+            messages.success(request, 'Registration successful. Please login.')
+            return redirect('login_page')
+        else:
+            messages.error(request, 'OTP is incorrect.')
+            return redirect('verify_email')
+    
+    return render(request, 'verify_email.html')
+
+
 def register(request):
     if request.method == 'POST':
         # Get form data from POST request
@@ -45,28 +82,29 @@ def register(request):
             return redirect('register')  # Redirect back to the registration page
         
         try:
-            # Create a new User object
-            user = User.objects.create_user(username=email, email=email, first_name=first_name)
-            user.set_password(password)
-            user.save()
-
-            # Create an Account object associated with the new User
-            account.objects.create(user=user, security_key=security_key)
+            # Generate OTP
+            gen_otp = random.randint(1000, 9999)
             
-            # Optionally, you can log in the user after registration
-            # auth_login(request, user)
+            # Send OTP via email
+            sent_mail(first_name, email, gen_otp)
             
-            # Redirect to a success page or login page
-            messages.success(request, 'Registration successful. Please login.')
-            return redirect('login_page')  # Replace 'login_page' with your actual login URL name
+            # Hash the password before storing in the session
+            hashed_password = make_password(password)
+            
+            # Store user data and OTP in the session securely
+            request.session['first_name'] = first_name
+            request.session['email'] = email
+            request.session['hashed_password'] = hashed_password
+            request.session['security_key'] = security_key
+            request.session['gen_otp'] = gen_otp
+            messages.success(request, 'OTP sended to your email')
+            return redirect('verify_email')
         
         except Exception as e:
+            # messages.error(request, f'Invalid email')
             messages.error(request, f'Error occurred during registration: {str(e)}')
             return redirect('register')  # Redirect back to the registration page
-    
-    # If GET request, render the registration form
     return render(request, 'register.html')
-
 
 def reset_password(request, id):
     if request.method == 'POST':

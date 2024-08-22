@@ -126,15 +126,36 @@ USE_TZ = True
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'eyesofegale01@gmail.com'
+EMAIL_HOST_PASSWORD = 'qnqenetyhwbruyfs'
+
+# Enforce session cookies to be sent only over HTTPS
+SESSION_COOKIE_SECURE = True
+
+# Ensure session cookies cannot be accessed via JavaScript (to prevent XSS attacks)
+SESSION_COOKIE_HTTPONLY = True
+
+# Expire session when the browser is closed
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Set session timeout to 30 minutes (1800 seconds)
+SESSION_COOKIE_AGE = 1800  # 30 minutes in seconds
+

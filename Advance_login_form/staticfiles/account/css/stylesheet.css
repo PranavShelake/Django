@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #81c3d7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container Styles */
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: #2f6690;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+    color: #d9dcd6;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+/* Form Group Styles */
+.form-group {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.form-group:hover {
+    border-bottom: 3px solid #d9dcd6;
+}
+
+.form-group:focus-within {
+    border-bottom: 3px solid #d9dcd6;
+}
+.form-group input {
+    width: 82%;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #d9dcd6;
+}
+
+.form-group i {
+    color: #d9dcd6;
+    height: 40px;
+    font-size: 1.9rem;
+}
+
+/* Button Styles */
+.btn1 {
+    align-self: flex-start;
+    margin-left: 10%;
+    background-color: transparent;
+    border: none;
+}
+
+.btn1 a {
+    text-decoration: none;
+    color: #d9dcd6;
+    font-size: 0.9rem;
+    margin-left: px;
+}
+
+.btn2 {
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #3a7ca5;
+    color: #d9dcd6;
+    border: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn2:hover {
+    background-color: #16425b;
+}
+
+::placeholder {
+    font-size: 0.9rem;
+    color: #d9dcd6;
+}
+
+/* Container Paragraph Styles */
+.container p {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #d9dcd6;
+    background-color: transparent;
+}
+
+.container p a {
+    text-decoration: none;
+    color: #d9dcd6;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 3px;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+}
